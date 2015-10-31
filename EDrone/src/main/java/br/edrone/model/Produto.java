@@ -8,6 +8,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Column;
 import javax.persistence.Version;
+import javafx.scene.control.TextArea;
+import java.math.BigDecimal;
+import br.edrone.model.Categoria;
+import javax.persistence.ManyToOne;
 @Entity
 @Table(name = "produto")
 public class Produto implements Serializable {
@@ -20,8 +24,20 @@ public class Produto implements Serializable {
 	@Column(name = "version")
 	private int version;
 
-	@Column(name = "produto_descricao", nullable = false)
+	@Column(length = 200, name = "produto_descricao", nullable = false)
 	private String descricao;
+
+	@Column(name = "produto_caracteristica")
+	private String caracteristicas;
+
+	@Column(name = "produto_complemento")
+	private String complemento;
+
+	@Column(name = "produto_valor")
+	private BigDecimal valor;
+
+	@ManyToOne
+	private Categoria categoria;
 
 	public Long getId() {
 		return this.id;
@@ -72,11 +88,47 @@ public class Produto implements Serializable {
 		this.descricao = descricao;
 	}
 
+	public String getCaracteristicas() {
+		return caracteristicas;
+	}
+
+	public void setCaracteristicas(String caracteristicas) {
+		this.caracteristicas = caracteristicas;
+	}
+
+	public String getComplemento() {
+		return complemento;
+	}
+
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
+	}
+
+	public BigDecimal getValor() {
+		return valor;
+	}
+
+	public void setValor(BigDecimal valor) {
+		this.valor = valor;
+	}
+
 	@Override
 	public String toString() {
 		String result = getClass().getSimpleName() + " ";
 		if (descricao != null && !descricao.trim().isEmpty())
 			result += "descricao: " + descricao;
+		if (caracteristicas != null && !caracteristicas.trim().isEmpty())
+			result += ", caracteristicas: " + caracteristicas;
+		if (complemento != null && !complemento.trim().isEmpty())
+			result += ", complemento: " + complemento;
 		return result;
+	}
+
+	public Categoria getCategoria() {
+		return this.categoria;
+	}
+
+	public void setCategoria(final Categoria categoria) {
+		this.categoria = categoria;
 	}
 }
