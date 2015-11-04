@@ -7,6 +7,9 @@ angular.module('eDrone',['ngRoute','ngResource'])
       .when('/Categoria',{templateUrl:'views/Categoria/search.html',controller:'SearchCategoriaController'})
       .when('/Categoria/new',{templateUrl:'views/Categoria/detail.html',controller:'NewCategoriaController'})
       .when('/Categoria/edit/:CategoriaId',{templateUrl:'views/Categoria/detail.html',controller:'EditCategoriaController'})
+      .when('/Produtos',{templateUrl:'views/Produto/search.html',controller:'SearchProdutoController'})
+      .when('/Produtos/new',{templateUrl:'views/Produto/detail.html',controller:'NewProdutoController'})
+      .when('/Produtos/edit/:ProdutoId',{templateUrl:'views/Produto/detail.html',controller:'EditProdutoController'})
       .otherwise({
         redirectTo: '/'
       });
