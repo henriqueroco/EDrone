@@ -13,14 +13,14 @@ import javax.persistence.Version;
 public class Categoria implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id", updatable = false, nullable = false)
 	private Long id;
 	@Version
 	@Column(name = "version")
 	private int version;
 
-	@Column(length = 80, name = "categoria_descricao", nullable = false)
+	@Column(name = "categoria_descricao", nullable = false)
 	private String descricao;
 
 	public Long getId() {
