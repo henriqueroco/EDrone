@@ -13,8 +13,10 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import br.edrone.model.enuns.ESexo;
 import javax.persistence.Enumerated;
+import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "cliente")
+@XmlRootElement
 public class Cliente implements Serializable {
 
 	@Id

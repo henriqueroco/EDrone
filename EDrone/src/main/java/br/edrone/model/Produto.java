@@ -12,8 +12,10 @@ import javafx.scene.control.TextArea;
 import java.math.BigDecimal;
 import br.edrone.model.Categoria;
 import javax.persistence.ManyToOne;
+import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "produto")
+@XmlRootElement
 public class Produto implements Serializable {
 
 	@Id

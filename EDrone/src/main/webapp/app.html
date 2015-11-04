@@ -35,6 +35,7 @@
                     <nav class="sidebar-nav" ng-controller="NavController" role="navigation">
                         <div id="sidebar-entries" class="list-group">
                         	<a class="list-group-item" ng-class="{active: matchesRoute('Categoria')}" href="#/Categoria" data-toggle="offcanvas">Categoria</a>
+                        	<a class="list-group-item" ng-class="{active: matchesRoute('Clientes')}" href="#/Clientes" data-toggle="offcanvas">Clientes</a>
                         	<a class="list-group-item" ng-class="{active: matchesRoute('Produtos')}" href="#/Produtos" data-toggle="offcanvas">Produtos</a>
                         </div>
                     </nav>
@@ -79,6 +80,10 @@
     <script src="scripts/controllers/newCategoriaController.js"></script>
     <script src="scripts/controllers/searchCategoriaController.js"></script>
     <script src="scripts/controllers/editCategoriaController.js"></script>
+    <script src="scripts/services/ClienteFactory.js"></script>
+    <script src="scripts/controllers/newClienteController.js"></script>
+    <script src="scripts/controllers/searchClienteController.js"></script>
+    <script src="scripts/controllers/editClienteController.js"></script>
     <script src="scripts/services/ProdutoFactory.js"></script>
     <script src="scripts/controllers/newProdutoController.js"></script>
     <script src="scripts/controllers/searchProdutoController.js"></script>

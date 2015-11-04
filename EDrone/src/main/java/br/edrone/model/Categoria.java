@@ -8,8 +8,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Column;
 import javax.persistence.Version;
+import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "categoria")
+@XmlRootElement
 public class Categoria implements Serializable {
 
 	@Id
